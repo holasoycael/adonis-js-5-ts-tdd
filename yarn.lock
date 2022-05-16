@@ -4297,7 +4297,7 @@ pg-connection-string@2.5.0:
   resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-2.5.0.tgz#538cadd0f7e603fc09a12590f3b8a452c2c0cf34"
   integrity sha512-r5o/V/ORTA6TmUnyWZR9nCj1klXCO2CEKNRlVuJptZe85QuhFayC7WeMic7ndayT5IRIR0S0xFxFi2ousartlQ==
 
-phc-argon2@^1.1.1:
+phc-argon2@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/phc-argon2/-/phc-argon2-1.1.3.tgz#9cfac7544518e092c086648c2abd398b61f9101b"
   integrity sha512-RMvqQ60/CfOQv0TuSdyQ1voGbHvOdCCtcphHA6bUlxphh0iNEOHdO+YJE+jsz5V6gc78TmJreOQxV8BOC74f2w==
