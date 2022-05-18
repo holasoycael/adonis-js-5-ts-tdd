@@ -35,16 +35,37 @@ test.group('User', (group) => {
     assert.notExists(body.user.password, 'Password defined')
   })
 
-  test('is should return 409 when is already in use', async (assert) => {
-    const { email } = await UserFactory.create()
+  test('is should return 409 when username is already in use', async (assert) => {
+    const { username } = await UserFactory.create()
+    const { body } = await supertest(BASE_URL)
+      .post('/users')
+      .send({
+        username,
+        email: 'test@test.com',
+        password: 'test',
+        avatar: 'https://images.com/image/1',
+      })
+      .expect(409)
 
-    const userPayload = {
-      email,
-      username: 'test',
-      password: 'test',
-      avatar: 'https://images.com/image/1',
-    }
-    const { body } = await supertest(BASE_URL).post('/users').send(userPayload).expect(409)
+    assert.exists(body.message)
+    assert.exists(body.code)
+    assert.exists(body.status)
+    assert.include(body.message, 'username')
+    assert.equal(body.code, 'BAD_REQUEST')
+    assert.equal(body.status, 409)
+  })
+
+  test('is should return 409 when email is already in use', async (assert) => {
+    const { email } = await UserFactory.create()
+    const { body } = await supertest(BASE_URL)
+      .post('/users')
+      .send({
+        email,
+        username: 'test',
+        password: 'test',
+        avatar: 'https://images.com/image/1',
+      })
+      .expect(409)
 
     assert.exists(body.message)
     assert.exists(body.code)
