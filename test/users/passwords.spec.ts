@@ -14,7 +14,7 @@ test.group('Password', (group) => {
       assert.deepEqual(message.to, [{ address: user.email }])
       assert.deepEqual(message.from, { address: 'no-reply@roleplay.com' })
       assert.equal(message.subject, 'Roleplay: Recuperação de senha')
-      assert.equal(message.text, 'Clique no link abaixo para redefinir a sua senha.')
+      assert.include(message.html!, user.username)
     })
 
     await supertest(BASE_URL)
@@ -24,6 +24,8 @@ test.group('Password', (group) => {
         resetPasswordUrl: 'url',
       })
       .expect(204)
+
+    Mail.restore()
   })
 
   group.beforeEach(async () => {

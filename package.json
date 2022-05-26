@@ -37,7 +37,7 @@
     "@adonisjs/lucid": "^15.0.2",
     "@adonisjs/mail": "^7.2.2",
     "@adonisjs/repl": "^3.0.0",
-    "@adonisjs/view": "^6.0.4",
+    "@adonisjs/view": "^6.1.5",
     "luxon": "^1.26.0",
     "mysql": "^2.18.1",
     "phc-argon2": "^1.1.3",

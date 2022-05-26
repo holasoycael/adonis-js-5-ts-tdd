@@ -294,7 +294,7 @@
     tmp-cache "^1.1.0"
     validator "^13.7.0"
 
-"@adonisjs/view@^6.0.4":
+"@adonisjs/view@^6.1.5":
   version "6.1.5"
   resolved "https://registry.yarnpkg.com/@adonisjs/view/-/view-6.1.5.tgz#2a8e1a69a9b906c855099a2e5e5634c678eae5a4"
   integrity sha512-WGyNGXZQYzeK39ufkK+OELsARBg9GRQFZUCUwQpe33ddLVGYb3D1ElAhW+rFY9l0/+h7ClXpjdns0JKBsYk9iQ==
