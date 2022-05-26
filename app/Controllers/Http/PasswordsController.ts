@@ -5,6 +5,7 @@ import ForgotPassword from 'App/Validators/ForgotPasswordValidator'
 export default class PasswordsController {
   public async forgotPassword({ request, response }: HttpContextContract) {
     const { email } = await request.validate(ForgotPassword)
+
     Mail.send((message) => {
       message
         .from('no-reply@roleplay.com')
@@ -12,8 +13,6 @@ export default class PasswordsController {
         .subject('Roleplay: Recuperação de senha')
         .text('Clique no link abaixo para redefinir a sua senha.')
     })
-
-    console.log(JSON.stringify(Mail.preview, null, 2))
 
     return response.noContent()
   }
