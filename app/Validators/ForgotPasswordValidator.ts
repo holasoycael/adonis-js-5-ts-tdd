@@ -25,7 +25,7 @@ export default class ForgotPasswordValidator {
    */
   public schema = schema.create({
     email: schema.string({}, [rules.email()]),
-    resetPasswordUrl: schema.string({}),
+    resetPasswordUrl: schema.string(),
   })
 
   /**
